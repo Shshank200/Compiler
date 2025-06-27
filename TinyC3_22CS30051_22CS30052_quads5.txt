@@ -1,0 +1,160 @@
+THREE ADDRESS CODE (TAC):
+
+   0: bubbleSort: 
+
+   1: bubbleSort.FOR$0: 
+   2: t0 = 0
+   3: i = t0
+   4: t1 = 1
+   5: t2 = n - t1
+   6: if i < t2 goto 10
+   7: goto 
+   8: i = i + 1
+   9: goto 4
+
+  10: bubbleSort.FOR$0.FOR$1: 
+  11: t0 = 0
+  12: j = t0
+  13: t1 = n - i
+  14: t2 = 1
+  15: t3 = t1 - t2
+  16: if j < t3 goto 20
+  17: goto 8
+  18: j = j + 1
+  19: goto 13
+  20: t4 = j * 4
+  21: t5 = arr[t4]
+  22: t6 = 1
+  23: t7 = j + t6
+  24: t8 = t7 * 4
+  25: t9 = arr[t8]
+  26: if t5 > t9 goto 29
+  27: goto 18
+  28: goto 44
+
+  29: bubbleSort.FOR$0.FOR$1.FOR$2: 
+  30: t0 = j * 4
+  31: t1 = arr[t0]
+  32: temp = t1
+  33: t2 = j * 4
+  34: t3 = 1
+  35: t4 = j + t3
+  36: t5 = t4 * 4
+  37: t6 = arr[t5]
+  38: arr[t2] = t6
+  39: t8 = 1
+  40: t9 = j + t8
+  41: t10 = t9 * 4
+  42: arr[t10] = temp
+  43: goto 18
+  44: goto 18
+  45: goto 8
+
+  46: main: 
+  47: t0 = 5
+  48: t1 = 3
+  49: t2 = 8
+  50: t3 = 4
+  51: t4 = 2
+  52: arr = arr
+  53: t5 = 0
+  54: t6 = t5 * 4
+  55: t7 = arr[t6]
+  56: t9 =  / 
+  57: n = t9
+  58: param arr
+  59: param n
+  60: t10 = call bubbleSort, 2
+  61: t11 = "Sorted array: "
+  62: param t11
+  63: t12 = call printf, 1
+
+  64: main.FOR$0: 
+  65: t0 = 0
+  66: i = t0
+  67: if i < n goto 71
+  68: goto 78
+  69: i = i + 1
+  70: goto 67
+  71: t1 = "%d "
+  72: param t1
+  73: t2 = i * 4
+  74: t3 = arr[t2]
+  75: param t3
+  76: t4 = call printf, 2
+  77: goto 69
+  78: t13 = "\n"
+  79: param t13
+  80: t14 = call printf, 1
+  81: t15 = 0
+  82: return t15
+
+Symbol Table: Global, Parent: None
+           main                 int      null         4         0
+Symbol Table: main, Parent: Global
+            t15                 int         0         4         0
+            t14                 int                   4         4
+            t13           ptr(char)      "\n"         4         8
+     main.FOR$0               block      null         4        12
+Symbol Table: main.FOR$0, Parent: main
+             t4                 int                   4         0
+             t3                 int                   4         4
+             t2                 int                   4         8
+             t1           ptr(char)     "%d "         4        12
+             t0                 int         0         4        16
+              i                 int        t0         4        20
+            t12                 int                   4        16
+            t11           ptr(char)"Sorted array: "         4        20
+         printf                 int      null         4        24
+            t10                void                   4        28
+             t9                  t4                   4        32
+             t8              return                   4        36
+             t7                 int                   4        40
+             t6                 int                   4        44
+             t5                 int         0         4        48
+              n                 int      null         4        52
+             t4                 int         2         4        56
+             t3                 int         4         4        60
+             t2                 int         8         4        64
+             t1                 int         3         4        68
+             t0                 int         5         4        72
+            arr         arr(0, int)       arr         0        76
+         return                 int      null         4        76
+     bubbleSort                void      null         0         4
+Symbol Table: bubbleSort, Parent: Global
+bubbleSort.FOR$0               block      null         4         0
+Symbol Table: bubbleSort.FOR$0, Parent: bubbleSort
+bubbleSort.FOR$0.FOR$1               block      null         4         0
+Symbol Table: bubbleSort.FOR$0.FOR$1, Parent: bubbleSort.FOR$0
+bubbleSort.FOR$0.FOR$1.FOR$2               block      null         4         0
+Symbol Table: bubbleSort.FOR$0.FOR$1.FOR$2, Parent: bubbleSort.FOR$0.FOR$1
+            t11                 int                   4         0
+            t10                 int                   4         4
+             t9                 int                   4         8
+             t8                 int         1         4        12
+             t7                 int                   4        16
+             t6                 int                   4        20
+             t5                 int                   4        24
+             t4                 int                   4        28
+             t3                 int         1         4        32
+             t2                 int                   4        36
+             t1                 int                   4        40
+             t0                 int                   4        44
+           temp                 int      null         4        48
+             t9                 int                   4         4
+             t8                 int                   4         8
+             t7                 int                   4        12
+             t6                 int         1         4        16
+             t5                 int                   4        20
+             t4                 int                   4        24
+             t3                 int                   4        28
+             t2                 int         1         4        32
+             t1                 int                   4        36
+             t0                 int         0         4        40
+              j                 int        t0         4        44
+             t2                 int                   4         4
+             t1                 int         1         4         8
+             t0                 int         0         4        12
+              i                 int        t0         4        16
+              n                 int      null         4         4
+            arr         arr(0, int)      null         0         8

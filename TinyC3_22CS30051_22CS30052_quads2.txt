@@ -1,0 +1,51 @@
+THREE ADDRESS CODE (TAC):
+
+   0: factorial: 
+   1: t0 = 1
+   2: if n <= t0 goto 5
+   3: goto 8
+   4: goto 8
+   5: t1 = 1
+   6: return t1
+   7: goto 8
+   8: t2 = 1
+   9: t3 = n - t2
+  10: param t3
+  11: t4 = call factorial, 1
+  12: t5 = n * t4
+  13: return t5
+
+  14: main: 
+  15: t0 = 5
+  16: num = t0
+  17: t1 = "Factorial of %d is %d\n"
+  18: param t1
+  19: param num
+  20: param num
+  21: t2 = call factorial, 1
+  22: param t2
+  23: t3 = call printf, 3
+  24: t4 = 0
+  25: return t4
+
+Symbol Table: Global, Parent: None
+           main                 int      null         4         0
+Symbol Table: main, Parent: Global
+             t4                 int         0         4         0
+             t3                 int                   4         4
+             t2                 int                   4         8
+             t1           ptr(char)"Factorial of %d is %d\n"         4        12
+         printf                 int      null         4        16
+             t0                 int         5         4        20
+            num                 int        t0         4        24
+         return                 int      null         4        28
+      factorial                 int      null         4         4
+Symbol Table: factorial, Parent: Global
+             t5                 int                   4         0
+             t4                 int                   4         4
+             t3                 int                   4         8
+             t2                 int         1         4        12
+             t1                 int         1         4        16
+             t0                 int         1         4        20
+         return                 int      null         4        24
+              n                 int      null         4        28

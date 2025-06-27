@@ -1,0 +1,72 @@
+THREE ADDRESS CODE (TAC):
+
+   0: reverseString: 
+   1: t0 = 0
+   2: start = t0
+   3: param str
+   4: t1 = call strlen, 1
+   5: t2 = 1
+   6: t3 = t1 - t2
+   7: end = t3
+
+   8: reverseString.WHILE$0: 
+   9: if start < end goto 11
+  10: goto 
+  11: t0 = start * 1
+  12: t1 = str[t0]
+  13: temp = t1
+  14: t2 = start * 1
+  15: t3 = end * 1
+  16: t4 = str[t3]
+  17: t5 = int2char(t4)
+  18: str[t2] = t5
+  19: t6 = end * 1
+  20: str[t6] = temp
+  21: start = start + 1
+  22: end = end - 1
+  23: goto 9
+
+  24: main: 
+  25: t0 = "Hello, World!"
+  26: str = t0
+  27: param str
+  28: t1 = call reverseString, 1
+  29: t2 = "Reversed string: %s\n"
+  30: param t2
+  31: param str
+  32: t3 = call printf, 2
+  33: t4 = 0
+  34: return t4
+
+Symbol Table: Global, Parent: None
+           main                 int      null         4         0
+Symbol Table: main, Parent: Global
+             t4                 int         0         4         0
+             t3                 int                   4         4
+             t2           ptr(char)"Reversed string: %s\n"         4         8
+         printf                 int      null         4        12
+             t1                void                   4        16
+             t0           ptr(char)"Hello, World!"         4        20
+            str        arr(0, char)        t0         0        24
+         return                 int      null         4        24
+  reverseString                void      null         0         4
+Symbol Table: reverseString, Parent: Global
+reverseString.WHILE$0               block      null         4         0
+Symbol Table: reverseString.WHILE$0, Parent: reverseString
+             t7                char                   4         0
+             t6                 int                   4         4
+             t5                char                   4         8
+             t4                 int                   4        12
+             t3                 int                   4        16
+             t2                 int                   4        20
+             t1                 int                   4        24
+             t0                 int                   4        28
+           temp                char      null         1        32
+             t3                 int                   4         4
+             t2                 int         1         4         8
+             t1                 int                   4        12
+         strlen                 int      null         4        16
+            end                 int      null         4        20
+             t0                 int         0         4        24
+          start                 int        t0         4        28
+            str           ptr(char)      null         4        32

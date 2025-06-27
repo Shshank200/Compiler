@@ -1,0 +1,256 @@
+THREE ADDRESS CODE (TAC):
+
+   0: computeGCD: 
+   1: if num2 > num1 goto 4
+   2: goto 8
+   3: goto 8
+   4: param num1
+   5: param num2
+   6: t0 = call swap, 2
+   7: goto 8
+
+   8: computeGCD.WHILE$0: 
+   9: t0 = 0
+  10: if num2 != t0 goto 12
+  11: goto 17
+  12: temp = num2
+  13: t1 = num1 % num2
+  14: num2 = t1
+  15: num1 = temp
+  16: goto 9
+  17: return num1
+
+  18: main: 
+  19: t0 = 10.0
+  20: val1 = t0
+  21: t1 = 'b'
+  22: val2 = t1
+  23: t2 = 10
+  24: t3 = 20
+  25: t4 = 1000
+
+  26: main.FOR$0: 
+  27: t0 = 0
+  28: idx = t0
+  29: t1 = 1000
+  30: if idx < t1 goto 34
+  31: goto 42
+  32: idx = idx + 1
+  33: goto 29
+  34: t2 = idx * 4
+  35: t3 = idx * idx
+  36: t4 = 23
+  37: t5 = t3 + t4
+  38: t6 = 34
+  39: t7 = t5 % t6
+  40: sequence[t2] = t7
+  41: goto 32
+  42: t5 = 1000
+  43: t6 = 0
+  44: t7 = t6 * 4
+  45: t8 = 1
+  46: lis[t7] = t8
+  47: t10 = 1000
+
+  48: main.FOR$1: 
+  49: t0 = 1
+  50: curIdx = t0
+  51: t1 = 1000
+  52: if curIdx < t1 goto 56
+  53: goto 97
+  54: curIdx = curIdx + 1
+  55: goto 51
+  56: t2 = curIdx * 4
+  57: t3 = 1
+  58: lis[t2] = t3
+  59: t5 = curIdx * 4
+  60: t6 = 1
+  61: t7 = - t6
+  62: predecessor[t5] = t7
+
+  63: main.FOR$1.FOR$2: 
+  64: t0 = 0
+  65: prevIdx = t0
+  66: if prevIdx < curIdx goto 70
+  67: goto 54
+  68: prevIdx = prevIdx + 1
+  69: goto 66
+  70: t1 = prevIdx * 4
+  71: t2 = sequence[t1]
+  72: t3 = curIdx * 4
+  73: t4 = sequence[t3]
+  74: if t2 < t4 goto 76
+  75: goto 68
+  76: t5 = prevIdx * 4
+  77: t6 = lis[t5]
+  78: t7 = 1
+  79: t8 = t6 + t7
+  80: t9 = curIdx * 4
+  81: t10 = lis[t9]
+  82: if t8 > t10 goto 85
+  83: goto 68
+  84: goto 95
+
+  85: main.FOR$1.FOR$2.FOR$3: 
+  86: t0 = curIdx * 4
+  87: t1 = prevIdx * 4
+  88: t2 = lis[t1]
+  89: t3 = 1
+  90: t4 = t2 + t3
+  91: lis[t0] = t4
+  92: t6 = curIdx * 4
+  93: predecessor[t6] = prevIdx
+  94: goto 68
+  95: goto 68
+  96: goto 54
+  97: t11 = 0
+  98: longestIdx = t11
+
+  99: main.FOR$4: 
+ 100: t0 = 0
+ 101: j = t0
+ 102: t1 = 1000
+ 103: if j < t1 goto 107
+ 104: goto 118
+ 105: j = j + 1
+ 106: goto 102
+ 107: t2 = j * 4
+ 108: t3 = lis[t2]
+ 109: t4 = longestIdx * 4
+ 110: t5 = lis[t4]
+ 111: if t3 > t5 goto 114
+ 112: goto 105
+ 113: goto 117
+
+ 114: main.FOR$4.FOR$5: 
+ 115: longestIdx = j
+ 116: goto 105
+ 117: goto 105
+ 118: current = longestIdx
+
+ 119: main.WHILE$6: 
+ 120: t0 = 1
+ 121: t1 = - t0
+ 122: if current != t1 goto 124
+ 123: goto 128
+ 124: t2 = current * 4
+ 125: t3 = predecessor[t2]
+ 126: current = t3
+ 127: goto 120
+ 128: t12 = 10
+ 129: param t12
+ 130: t13 = 20
+ 131: param t13
+ 132: t14 = call computeGCD, 2
+ 133: t15 = 0
+ 134: return t15
+
+Symbol Table: Global, Parent: None
+           main                 int      null         4         0
+Symbol Table: main, Parent: Global
+            t15                 int         0         4         0
+            t14                 int                   4         4
+            t13                 int        20         4         8
+            t12                 int        10         4        12
+   main.WHILE$6               block      null         4        16
+Symbol Table: main.WHILE$6, Parent: main
+             t4                 int                   4         0
+             t3                 int                   4         4
+             t2                 int                   4         8
+             t1                 int                   4        12
+             t0                 int         1         4        16
+        current                 intlongestIdx         4        20
+     main.FOR$4               block      null         4        24
+Symbol Table: main.FOR$4, Parent: main
+main.FOR$4.FOR$5               block      null         4         0
+Symbol Table: main.FOR$4.FOR$5, Parent: main.FOR$4
+             t0                 int                   4         0
+             t5                 int                   4         4
+             t4                 int                   4         8
+             t3                 int                   4        12
+             t2                 int                   4        16
+             t1                 int      1000         4        20
+             t0                 int         0         4        24
+              j                 int        t0         4        28
+            t11                 int         0         4        28
+     longestIdx                 int       t11         4        32
+     main.FOR$1               block      null         4        36
+Symbol Table: main.FOR$1, Parent: main
+main.FOR$1.FOR$2               block      null         4         0
+Symbol Table: main.FOR$1.FOR$2, Parent: main.FOR$1
+main.FOR$1.FOR$2.FOR$3               block      null         4         0
+Symbol Table: main.FOR$1.FOR$2.FOR$3, Parent: main.FOR$1.FOR$2
+             t7                 int                   4         0
+             t6                 int                   4         4
+             t5                 int                   4         8
+             t4                 int                   4        12
+             t3                 int         1         4        16
+             t2                 int                   4        20
+             t1                 int                   4        24
+             t0                 int                   4        28
+            t10                 int                   4         4
+             t9                 int                   4         8
+             t8                 int                   4        12
+             t7                 int         1         4        16
+             t6                 int                   4        20
+             t5                 int                   4        24
+             t4                 int                   4        28
+             t3                 int                   4        32
+             t2                 int                   4        36
+             t1                 int                   4        40
+             t0                 int         0         4        44
+        prevIdx                 int        t0         4        48
+             t8                 int                   4         4
+             t7                 int                   4         8
+             t6                 int         1         4        12
+             t5                 int                   4        16
+             t4                 int                   4        20
+             t3                 int         1         4        24
+             t2                 int                   4        28
+             t1                 int      1000         4        32
+             t0                 int         1         4        36
+         curIdx                 int        t0         4        40
+            t10                 int      1000         4        40
+    predecessor      arr(1000, int)      null      4000        44
+             t9                 int                   4      4044
+             t8                 int         1         4      4048
+             t7                 int                   4      4052
+             t6                 int         0         4      4056
+             t5                 int      1000         4      4060
+            lis      arr(1000, int)      null      4000      4064
+     main.FOR$0               block      null         4      8064
+Symbol Table: main.FOR$0, Parent: main
+             t8                 int                   4         0
+             t7                 int                   4         4
+             t6                 int        34         4         8
+             t5                 int                   4        12
+             t4                 int        23         4        16
+             t3                 int                   4        20
+             t2                 int                   4        24
+             t1                 int      1000         4        28
+             t0                 int         0         4        32
+            idx                 int        t0         4        36
+             t4                 int      1000         4      8068
+       sequence      arr(1000, int)      null      4000      8072
+             t3                 int        20         4     12072
+             t2                 int        10         4     12076
+         matrixarr(10, arr(20, int))      null       800     12080
+             t1                char       'b'         4     12880
+           val2                 int        t1         4     12884
+             t0               float      10.0         4     12888
+           val1                 int        t0         4     12892
+         return                 int      null         4     12896
+     computeGCD                 int      null         4         4
+Symbol Table: computeGCD, Parent: Global
+computeGCD.WHILE$0               block      null         4         0
+Symbol Table: computeGCD.WHILE$0, Parent: computeGCD
+             t3                 int                   4         0
+             t2                 int                   4         4
+             t1                 int                   4         8
+           temp                 int      num2         4        12
+             t0                 int         0         4        16
+             t0                 int                   4         4
+           swap                 int      null         4         8
+         return                 int      null         4        12
+           num2                 int      null         4        16
+           num1                 int      null         4        20
